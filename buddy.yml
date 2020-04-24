@@ -1,0 +1,15 @@
+- pipeline: "builder-kqt"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  ref_type: "BRANCH"
+  auto_clear_cache: true
+  trigger_condition: "ALWAYS"
+  actions:
+  - action: "MAIN"
+    type: "BUILD"
+    docker_image_name: "library/ubuntu"
+    docker_image_tag: "18.04"
+    execute_commands:
+    - source ./domytbu
+    trigger_condition: "ALWAYS"
+    shell: "BASH"
